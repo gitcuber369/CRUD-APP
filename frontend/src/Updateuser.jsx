@@ -19,7 +19,7 @@ const Updateuser = () => {
 };
 
     const fetchSingleUser = async () => {
-        const res = await axios.get(`http://localhost:5000/read/${id}`);
+        const res = await axios.get(`https://crud-app-6.onrender.com/read/${id}`);
         setInputUser({
             name: res.data.name, 
             email: res.data.email, 
@@ -36,7 +36,7 @@ const Updateuser = () => {
         event.preventDefault(); 
         console.log(inputUser);
         const res = await axios.put(
-            `http://localhost:5000/updateuser/${id}`,
+            `https://crud-app-6.onrender.com/updateuser/${id}`,
             inputUser
         );
         console.log(res);

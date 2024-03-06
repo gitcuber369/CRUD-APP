@@ -8,7 +8,7 @@ export const ReadUser = () => {
     const [userData, setUserData] = useState({})
     
     const fetchSingleUser = async () => {
-        const res = await axios.get(`http://localhost:5000/read/${id}`);
+        const res = await axios.get(`https://crud-app-6.onrender.com/read/${id}`);
         console.log(res);
         setUserData(res.data);
     }; 

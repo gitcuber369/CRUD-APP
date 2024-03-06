@@ -22,7 +22,7 @@ const Home = () => {
     
     const  handleSubmit= async(event) => {
         event.preventDefault(); 
-        const res = await axios.post("http://localhost:5000/createuser",inputUser )
+        const res = await axios.post("https://crud-app-6.onrender.com/createuser",inputUser )
         console.log(res);
         fetchAllUser();
 
@@ -30,7 +30,7 @@ const Home = () => {
 
     const [userData, setUserData] = useState([])
     const fetchAllUser = async () => {
-        const res = await axios.get("http://localhost:5000/readuserdata");
+        const res = await axios.get("https://crud-app-6.onrender.com/readuserdata");
         console.log(res);
         setUserData(res.data);
     }; 
@@ -39,7 +39,7 @@ const Home = () => {
     }, []);
 
     const handleDelete=async(id) => {
-        const res = await axios.delete(`http://localhost:5000/delete/${id}`)
+        const res = await axios.delete(`https://crud-app-6.onrender.com/delete/${id}`)
         if(res.status===200){
             fetchAllUser();
         }
